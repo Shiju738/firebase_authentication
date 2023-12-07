@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/firestore.dart';
 import 'package:flutter_application_1/logintext/my_textfield.dart';
+import 'package:flutter_application_1/screen/image_upload.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,6 +36,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            // Navigate to the desired page when the leading IconButton is pressed
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const imageScreen()),
+            );
+          },
+          icon: const Icon(
+            Icons.image,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.grey.shade900,
         title: const Text(
           "FireStore",
